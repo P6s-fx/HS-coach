@@ -4,8 +4,8 @@ type SplitSectionProps = {
   imageSrc: string
   eyebrow?: string
   title: string
-  paragraphs: string[]
-  bullets?: string[]
+  paragraphs: readonly string[]
+  bullets?: readonly string[]
   reverse?: boolean
 }
 
