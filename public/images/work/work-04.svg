@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <rect width="1400" height="900" fill="#0b0c10"/>
+  <g fill="#ffffff" fill-opacity="0.06">
+    <rect x="120" y="130" width="1160" height="540" rx="44"/>
+    <circle cx="350" cy="400" r="90" fill="#f0d28a" fill-opacity="0.10"/>
+    <circle cx="650" cy="420" r="110" fill="#ffffff" fill-opacity="0.05"/>
+    <circle cx="980" cy="390" r="80" fill="#f0d28a" fill-opacity="0.08"/>
+  </g>
+  <g transform="translate(110 700)">
+    <text x="0" y="0" fill="#ffffff" fill-opacity="0.9" font-family="ui-sans-serif, system-ui" font-size="26" font-weight="700">Work 04</text>
+    <text x="0" y="40" fill="#ffffff" fill-opacity="0.65" font-family="ui-sans-serif, system-ui" font-size="18">Replace with alignment / fabrication detail photo</text>
+  </g>
+</svg>

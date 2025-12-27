@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <rect width="1400" height="900" fill="#0b0c10"/>
+  <g opacity="0.25">
+    <rect x="0" y="0" width="1400" height="900" fill="#f0d28a"/>
+  </g>
+  <g transform="translate(90 620)">
+    <rect x="0" y="0" width="1220" height="160" rx="40" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.10"/>
+    <text x="40" y="68" fill="#ffffff" fill-opacity="0.9" font-family="ui-sans-serif, system-ui" font-size="26" font-weight="700">Skin 02</text>
+    <text x="40" y="108" fill="#ffffff" fill-opacity="0.65" font-family="ui-sans-serif, system-ui" font-size="18">Replace this with your real exterior skin image</text>
+  </g>
+</svg>

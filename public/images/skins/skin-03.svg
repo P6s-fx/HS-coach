@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <defs>
+    <radialGradient id="g" cx="30%" cy="20%" r="70%">
+      <stop offset="0" stop-color="#f0d28a" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#0b0c10" stop-opacity="1"/>
+    </radialGradient>
+  </defs>
+  <rect width="1400" height="900" fill="url(#g)"/>
+  <g transform="translate(90 620)">
+    <rect x="0" y="0" width="1220" height="160" rx="40" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.10"/>
+    <text x="40" y="68" fill="#ffffff" fill-opacity="0.9" font-family="ui-sans-serif, system-ui" font-size="26" font-weight="700">Skin 03</text>
+    <text x="40" y="108" fill="#ffffff" fill-opacity="0.65" font-family="ui-sans-serif, system-ui" font-size="18">Replace this with your real exterior skin image</text>
+  </g>
+</svg>
