@@ -17,6 +17,8 @@ type FormState = {
   message: string
 }
 
+type SubmitStatus = 'idle' | 'loading' | 'success' | 'error'
+
 const inquiryTypes = ['Coach Body Manufacturing', 'Luxury Skins', 'Interior Upgrade', 'Refurbishment', 'Other'] as const
 const timelines = ['Immediately', 'This month', 'Next 1-3 months', 'Just exploring'] as const
 
@@ -30,6 +32,10 @@ export function InquiryForm({ title = 'Send an enquiry', hint }: InquiryFormProp
     timeline: timelines[2],
     message: '',
   })
+
+  const [website, setWebsite] = useState('')
+  const [status, setStatus] = useState<SubmitStatus>('idle')
+  const [error, setError] = useState('')
 
   const mailtoHref = useMemo(() => {
     const subject = encodeURIComponent(`New enquiry - ${state.inquiryType}`)
@@ -48,6 +54,47 @@ export function InquiryForm({ title = 'Send an enquiry', hint }: InquiryFormProp
     return `mailto:hscoachpvt@gmail.com?subject=${subject}&body=${body}`
   }, [state])
 
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    setError('')
+
+    if (!state.name.trim() || !state.phone.trim() || !state.message.trim()) {
+      setStatus('error')
+      setError('Please provide name, phone, and message.')
+      return
+    }
+
+    setStatus('loading')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...state, website }),
+      })
+
+      const data = (await res.json()) as { ok?: boolean; error?: string }
+
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || 'Failed to send message.')
+      }
+
+      setStatus('success')
+      setState({
+        name: '',
+        phone: '',
+        email: '',
+        city: '',
+        inquiryType: inquiryTypes[0],
+        timeline: timelines[2],
+        message: '',
+      })
+      setWebsite('')
+    } catch (err) {
+      setStatus('error')
+      setError(err instanceof Error ? err.message : 'Failed to send message.')
+    }
+  }
+
   return (
     <div className="formCard">
       <div className="formHead">
@@ -55,7 +102,14 @@ export function InquiryForm({ title = 'Send an enquiry', hint }: InquiryFormProp
         {hint ? <div className="formHint">{hint}</div> : null}
       </div>
 
-      <form className="formGrid" onSubmit={(e) => e.preventDefault()}>
+      <form className="formGrid" onSubmit={onSubmit}>
+        <div style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, overflow: 'hidden' }} aria-hidden="true">
+          <label>
+            Website
+            <input value={website} onChange={(e) => setWebsite(e.target.value)} tabIndex={-1} autoComplete="off" />
+          </label>
+        </div>
+
         <label className="field">
           <span className="fieldLabel">Name</span>
           <input
@@ -141,11 +195,16 @@ export function InquiryForm({ title = 'Send an enquiry', hint }: InquiryFormProp
         </label>
 
         <div className="formActions">
-          <a className="textLink textLinkPrimary" href={mailtoHref}>
-            Send via Email
+          <button className="textLink textLinkPrimary" type="submit" disabled={status === 'loading'}>
+            {status === 'loading' ? 'Sending…' : 'Send enquiry'}
+          </button>
+          <a className="textLink" href={mailtoHref}>
+            Use email app
           </a>
-          <div className="formNote">Form is UI-only. Click “Send via Email” to open your mail app.</div>
         </div>
+
+        {status === 'success' ? <div className="formNote">Thanks—your enquiry was sent successfully.</div> : null}
+        {status === 'error' ? <div className="formNote">{error}</div> : null}
       </form>
     </div>
   )
