@@ -87,8 +87,6 @@ export async function POST(req: Request) {
       `Timeline: ${sanitizeLine(timeline || '-')}`,
       '',
       message,
-      '',
-      'Email is designed by P6s - https://param.p6s.in',
     ].join('\n')
 
     const safe = {
@@ -176,10 +174,7 @@ export async function POST(req: Request) {
           <td style="padding:14px 18px;border:1px solid rgba(255,255,255,0.10);border-top:none;border-radius:0 0 16px 16px;background:rgba(255,255,255,0.03);">
             <div style="font-size:12px;color:rgba(255,255,255,0.55);">
               Reply to this email to respond (reply-to is set to the sender’s email if provided).
-              <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
-                <div>Email is designed by <span style="color:#ffffff;">P6s</span></div>
-                <a href="https://param.p6s.in" target="_blank" rel="noreferrer" style="color:#f0d28a;text-decoration:none;"> https://param.p6s.in</a>
-              </div>
+              
             </div>
           </td>
         </tr>
