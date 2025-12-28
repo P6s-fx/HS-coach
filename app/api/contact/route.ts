@@ -29,6 +29,14 @@ function escapeHtml(value: string) {
     .replace(/'/g, '&#39;')
 }
 
+function parseRecipients(value: string | undefined) {
+  if (!value) return []
+  return value
+    .split(/[;,]/)
+    .map((v) => v.trim())
+    .filter(Boolean)
+}
+
 export async function POST(req: Request) {
   try {
     const contentType = req.headers.get('content-type') || ''
@@ -75,6 +83,8 @@ export async function POST(req: Request) {
         pass,
       },
     })
+
+    const toList = parseRecipients(to)
 
     const subject = `HS coach enquiry - ${sanitizeLine(inquiryType || 'General')}`
 
@@ -185,7 +195,7 @@ export async function POST(req: Request) {
 
     await transporter.sendMail({
       from: `HS coach Website <${user}>`,
-      to,
+      to: toList.length > 0 ? toList : to,
       replyTo: email || undefined,
       subject,
       text,
