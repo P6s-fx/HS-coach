@@ -8,9 +8,19 @@ export default function AboutPage() {
       <section className="contactHero">
         <Container>
           <div className="contactHeroInner">
-            <div className="eyebrow">About</div>
-            <h1 className="h1">{site.about.title}</h1>
-            <p className="p pMuted">A detail-first workshop focused on modern luxury interiors and premium exterior bodies.</p>
+            <div className="eyebrow heroFadeIn" style={{ animationDelay: '120ms' }}>
+              About
+            </div>
+            <h1 className="h1 heroTitle" aria-label={site.about.title}>
+              <span className="heroTitleLine">
+                <span className="heroTitleReveal" style={{ animationDelay: '180ms' }}>
+                  {site.about.title}
+                </span>
+              </span>
+            </h1>
+            <p className="p pMuted heroFadeIn" style={{ animationDelay: '420ms' }}>
+              A detail-first workshop focused on modern luxury interiors and premium exterior bodies.
+            </p>
           </div>
         </Container>
       </section>

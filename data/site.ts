@@ -95,7 +95,7 @@ export const site = {
     titleLines: ['End-to-end coach building', 'with premium execution.'],
     subtitle:
       'From fabrication and skins to interior finishing and upgrades, our workshop delivers cohesive luxury—inside and out.',
-    imageSrc: '/images/hero/services-hero.svg',
+    imageSrc: '',
     primaryCta: { label: 'Enquire Now', href: '/contact' },
     secondaryCta: { label: 'See Work', href: '/services#work' },
   } satisfies HeroContent,

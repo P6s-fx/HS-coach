@@ -10,7 +10,7 @@ export function Hero({ content }: HeroProps) {
   return (
     <section className="hero">
       <div className="heroMedia" aria-hidden="true">
-        <img className="heroImage" src={content.imageSrc} alt="" />
+        {content.imageSrc ? <img className="heroImage" src={content.imageSrc} alt="" /> : null}
         <div className="heroShade" />
       </div>
       <Container>

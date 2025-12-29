@@ -9,9 +9,17 @@ export default function ContactPage() {
       <section className="contactHero">
         <Container>
           <div className="contactHeroInner">
-            <div className="eyebrow">{site.brand.name}</div>
-            <h1 className="h1">Enquiries & project requests</h1>
-            <p className="p pMuted">
+            <div className="eyebrow heroFadeIn" style={{ animationDelay: '120ms' }}>
+              {site.brand.name}
+            </div>
+            <h1 className="h1 heroTitle" aria-label="Enquiries & project requests">
+              <span className="heroTitleLine">
+                <span className="heroTitleReveal" style={{ animationDelay: '180ms' }}>
+                  Enquiries & project requests
+                </span>
+              </span>
+            </h1>
+            <p className="p pMuted heroFadeIn" style={{ animationDelay: '420ms' }}>
               Tell us what you want to build—interior upgrades, exterior skins, full coach body manufacturing, or refurbishment.
             </p>
           </div>

@@ -195,10 +195,10 @@ export function InquiryForm({ title = 'Send an enquiry', hint }: InquiryFormProp
         </label>
 
         <div className="formActions">
-          <button className="textLink textLinkPrimary" type="submit" disabled={status === 'loading'}>
+          <button className="heroButton heroButtonPrimary" type="submit" disabled={status === 'loading'}>
             {status === 'loading' ? 'Sending…' : 'Send enquiry'}
           </button>
-          <a className="textLink" href={mailtoHref}>
+          <a className="heroButton" href={mailtoHref}>
             Use email app
           </a>
         </div>
