@@ -42,7 +42,7 @@ export function Navbar() {
       <div className="nav">
         <Container className="navInner">
           <Link href="/" className="brand">
-            <span className="brandMark">HS</span>
+            <img className="brandLogo" src="/images/logo.png" alt={`${site.brand.name} logo`} width={34} height={34} />
             <span className="brandName">{site.brand.name}</span>
           </Link>
 

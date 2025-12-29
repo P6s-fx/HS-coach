@@ -9,6 +9,7 @@ export function Footer() {
     <footer className="footer">
       <Container className="footerInner">
         <div className="footerBrand">
+          <img className="footerLogo" src="/images/logo.png" alt={`${site.brand.name} logo`} width={48} height={48} />
           <div className="footerBrandName">{site.brand.name}</div>
           <div className="footerBrandTagline">{site.brand.tagline}</div>
         </div>

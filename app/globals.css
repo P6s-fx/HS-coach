@@ -114,6 +114,13 @@ button {
   letter-spacing: 0.5px;
 }
 
+.brandLogo {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
 .brandName {
   font-weight: 650;
   letter-spacing: 0.4px;
@@ -502,6 +509,44 @@ button {
   flex-wrap: wrap;
 }
 
+.heroButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  font-weight: 650;
+  letter-spacing: 0.2px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.92);
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.heroButton:hover {
+  transform: translateY(-1px);
+  border-color: rgba(240, 210, 138, 0.38);
+  background: rgba(255, 255, 255, 0.09);
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.heroButton:focus-visible {
+  outline: 2px solid rgba(240, 210, 138, 0.65);
+  outline-offset: 2px;
+}
+
+.heroButtonPrimary {
+  border-color: rgba(240, 210, 138, 0.38);
+  background: linear-gradient(135deg, rgba(240, 210, 138, 0.22), rgba(255, 255, 255, 0.06));
+  color: rgba(240, 210, 138, 0.98);
+}
+
+.heroButtonPrimary:hover {
+  background: linear-gradient(135deg, rgba(240, 210, 138, 0.28), rgba(255, 255, 255, 0.08));
+  color: rgba(255, 255, 255, 0.96);
+}
+
 .heroFadeIn {
   animation: fadeIn 700ms ease-out both;
 }
@@ -874,6 +919,13 @@ button {
 
 .footerBrandName {
   font-weight: 850;
+}
+
+.footerLogo {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  margin-bottom: 14px;
 }
 
 .footerBrandTagline {

@@ -32,11 +32,11 @@ export function Hero({ content }: HeroProps) {
           </p>
 
           <div className="heroLinks heroFadeIn" style={{ animationDelay: '520ms' }}>
-            <Link className="textLink textLinkPrimary" href={content.primaryCta.href}>
+            <Link className="heroButton heroButtonPrimary" href={content.primaryCta.href}>
               {content.primaryCta.label}
             </Link>
             {content.secondaryCta ? (
-              <Link className="textLink" href={content.secondaryCta.href}>
+              <Link className="heroButton" href={content.secondaryCta.href}>
                 {content.secondaryCta.label}
               </Link>
             ) : null}

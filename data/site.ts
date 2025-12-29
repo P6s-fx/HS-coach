@@ -34,9 +34,9 @@ export const site = {
     tagline: 'Modern luxury coach manufacturing for premium interiors and sculpted exteriors.',
   },
   contact: {
-    phone: '9737577979',
+    phone: '+91 97375 77979',
     email: 'contact.hscoach@gmail.com',
-    address: 'Add your workshop address here',
+    address: 'HS Coach, Survey No. 470, NH-48, Ahmedabad - Himmatnagar Highway, Fulpura Road, Valad, Gandhinagar',
     whatsapp: '9737577979',
   },
   services: {
